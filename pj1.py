@@ -1,0 +1,1 @@
+print("WELCOME TO MY COMPUTER QUIZ\n")
