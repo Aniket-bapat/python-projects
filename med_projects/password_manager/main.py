@@ -1,10 +1,10 @@
 from cryptography.fernet import Fernet
 
 '''def write_key():
-    key=Fernet.generate_key()
+    key=Fernet.generate_key()+pwd.encode()
     with open('key.key','wb') as f:
-        f.write(key)
-write_key()'''
+        f.write(key)'''
+
 
 def load_key():
     file= open("key.key","rb")
@@ -29,9 +29,11 @@ def view():
 
 pwd=input("WHAT IS THE MASTER PASSWORD\n").strip().lower()
 key =load_key()
+code = key.decode()
 fer=Fernet(key)
-                
-if pwd =="pwd":
+'''write_key()'''
+if pwd in code:
+    print("ACCESS GRANTED")
     while True:
         mode =input("would you like to aad a new password or view existing ones (view,add) or press q to quit ?").strip().lower()
         if mode == "q":
@@ -39,7 +41,11 @@ if pwd =="pwd":
         if mode == "view":
             view()
         elif mode == "add":
-            add()
+            add()      
+
+else:
+    print("ACCESS DENIED")
+    exit()
 
 
 
