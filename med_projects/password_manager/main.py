@@ -30,9 +30,10 @@ def view():
 pwd=input("WHAT IS THE MASTER PASSWORD\n").strip().lower()
 key =load_key()
 code = key.decode()
+li=(code.split("="))
 fer=Fernet(key)
 '''write_key()'''
-if pwd in code:
+if pwd==li[1]:
     print("ACCESS GRANTED")
     while True:
         mode =input("would you like to aad a new password or view existing ones (view,add) or press q to quit ?").strip().lower()
@@ -46,6 +47,4 @@ if pwd in code:
 else:
     print("ACCESS DENIED")
     exit()
-
-
 
