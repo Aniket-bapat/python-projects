@@ -1,4 +1,4 @@
 work on making a key which is encrypted also with master password
-also if you are using this code for the first time make sure to run the write key command alone at start 
+also if you are using this code for the first time make sure to run the write key function (which is commented) alone at start 
 to create a folder of your encrypted key !
 then comment out as it is in the code !
