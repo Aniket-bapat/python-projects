@@ -1,0 +1,1 @@
+work on making a key which is encrypted also with master password
